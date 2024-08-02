@@ -1,0 +1,44 @@
+<!----------------Contact Section---------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i><a
+                        href="mailto:test@test.com">test&#64;test.com</a> </p>
+                <p><i class="fa-solid fa-square-phone"></i> <a href="Tel:+99 9999999999">+99 9999999999</a></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.google.com/maps/place/"
+                        target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+                <a href="#" class="btn btn2" download>Download CV</a>
+            </div>
+            <div class="contact-right">
+                <span id="msg" *ngIf="msgSent">Message sent succesfully.</span>
+                <form [formGroup]="form" name="submit-to-google-sheet">
+                    <input type="text" formControlName="Name" placeholder="Your Name..">
+                    <div *ngIf="form.get('Name')?.touched && form.get('Name')?.errors?.['required']" class="error">Name
+                        is required.</div>
+                    <div *ngIf="form.get('Name')?.touched && form.get('Name')?.errors?.['pattern']" class="error">Only
+                        Aplhabets.</div>
+
+                    <input type="email" formControlName="Email" placeholder="Your E-mail..">
+                    <div *ngIf="form.get('Email')?.touched && form.get('Email')?.errors?.['required']" class="error">
+                        Please enter an email.</div>
+                    <div *ngIf="form.get('Email')?.touched && form.get('Email')?.errors?.['email']" class="error">
+                        Invalid email.</div>
+
+                    <textarea formControlName="Message" rows="8" placeholder="Your Message.."></textarea>
+                    <div *ngIf="form.get('Message')?.touched&& form.get('Message')?.errors?.['required']" class="error">
+                        Message is required.</div>
+
+                    <button type="submit" class="btn" [disabled]="form.invalid" (click)="submit()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
