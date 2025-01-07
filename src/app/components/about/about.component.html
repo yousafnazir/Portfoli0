@@ -1,0 +1,96 @@
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="../../../assets/avatra.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>
+                    As a passionate frontend developer with a knack for creating visually stunning and highly functional user
+                     interfaces, I bring 2 years of experience to the table. My
+                      expertise lies in utilizing modern technologies like HTML,
+                     CSS, JavaScript, and frameworks such as React and Angular to
+                      craft responsive, user-friendly web applications. I thrive on transforming 
+                      complex problems into intuitive and elegant designs, ensuring seamless user experiences
+                       across all devices. With a strong eye for detail and a commitment to staying updated with 
+                       the latest industry trends, I am dedicated to delivering high-quality, cutting-edge web solutions
+                       . Let's build something amazing together!
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links" [class.active-link]="activeTab === 0 " (click)="tab(0)">Skills</p>
+                    <p class="tab-links" [class.active-link]="activeTab === 1 " (click)="tab(1)">Experience</p>
+                    <p class="tab-links" [class.active-link]="activeTab === 2 " (click)="tab(2)">Education</p>
+                </div>
+                <div class="tab-contents" *ngIf="tabMenu[0]">
+
+                    <div class="skills">
+                        <div class="skill" *ngFor="let skill of skills">
+                            <div class="skill-box-1">
+                                <span class="skill-name">{{ skill.name }}</span>
+                                <span class="skill-percentage">{{ skill.percentage }}%</span>
+                            </div>
+                            <div class="skill-box-2">
+                                <div class="skill-animated-line" [style.width.%]="skill.percentage">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-contents" *ngIf="tabMenu[1]">
+                    <div class="experience-section">
+                        <div class="experience">
+                            <div class="date">2023 - Current</div>
+                            <div class="title"></div>
+                            <ul class="desc">
+                                <li><span>Skills & Technologies: </span> Html, CSS and JS</li>
+                                <li><span>Angular:</span></li>
+                                <li><strong>Project 1: </strong> One of my standout projects is a dynamic and interactive personal
+                                     finance management tool built using HTML, CSS, and JavaScript. This web application 
+                                     allows users to track their expenses, set budgets, and visualize their spending patterns
+                                      through interactive charts and graphs. I leveraged HTML for structuring the content, CSS
+                                       for styling and ensuring a responsive design, and JavaScript for adding interactivity and 
+                                       functionality. The project features a user-friendly interface with smooth animations and
+                                        transitions, making the user experience engaging and intuitive. Implementing features 
+                                        like data validation, local storage for saving user data, and real-time updates, I ensured
+                                         that the application was both reliable and efficient. This project not only enhanced my 
+                                         coding skills but also honed my ability to create practical solutions for real-world problems.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="experience">
+                            <div class="date">2023 - Current</div>
+                            <div class="title"></div>
+                            <ul class="desc">
+                                <li><span>Skills & Technologies: </span> Html, CSS and JS</li>
+                                <li><span>WordPress:</span></li>
+                                <li><strong>Project 2: </strong> I recently completed a comprehensive website project for a
+                                     construction company using WordPress. The goal was to create a professional and visually
+                                      appealing online presence that showcased the company's portfolio, services, and client 
+                                      testimonials. Utilizing WordPress's robust platform, I customized a theme to align with 
+                                      the company’s branding, ensuring a responsive and user-friendly design across all devices.
+                                       Key features included an interactive project gallery, a service detail section, and a 
+                                       contact form for easy client inquiries. Additionally, I implemented SEO best practices 
+                                       to enhance the website's visibility on search engines. This project allowed me to leverage 
+                                       my skills in WordPress customization, theme development, and SEO optimization, resulting in
+                                        a powerful marketing tool that effectively represents the construction company’s expertise
+                                         and professionalism.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-contents" *ngIf="tabMenu[2]">
+                    <ul>
+                        <li><span>2020</span><br>Matriculation - 84%</li>
+                        <li><span>2022</span><br>Intermediate - 72%</li>
+                        <li><span>2024</span><br>Computer scince</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
