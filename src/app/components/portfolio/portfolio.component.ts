@@ -64,13 +64,6 @@ export class PortfolioComponent {
       class: 'all work js'
     },
     {
-      image: '../../../assets/Tiles Images/company.jpeg',
-      title: 'Site for Company',
-      body: 'Building site for the company',
-      link: 'https://techlio-project.vercel.app/',
-      class: 'all work js'
-    },
-    {
       image: '../../../assets/Tiles Images/todo.jpeg',
       title: 'Todo List App',
       body: 'Write your daily things in this list',
